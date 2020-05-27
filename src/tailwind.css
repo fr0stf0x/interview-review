@@ -1,0 +1,57 @@
+@tailwind base;
+
+@tailwind components;
+
+@import './index.less';
+
+@tailwind utilities;
+
+.theme-light {
+  --color-bg-primary: #a8dadc;
+  --color-bg-primary-soft: rgb(174, 211, 212);
+  --color-bg-secondary: #b56576;
+  --color-bg-secondary-soft: #b67281;
+  --color-bg-default: #f1faee;
+  --color-bg-default-soft: #fafafa;
+  --color-bg-inverse: #15616D;
+
+  --color-text-primary: #457b9d;
+  --color-text-secondary: #44467b;
+  --color-text-default: #373737;
+  --color-text-default-soft: #6a6a6a;
+  --color-text-inverse: #fff;
+  --color-text-inverse-soft: rgba(255, 255, 255, 0.7);
+
+  --font-display: Futura, Trebuchet MS, Arial, sans-serif;
+  --font-body: Futura, Trebuchet MS, Arial, sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-display: 600;
+  --font-weight-btn: 600;
+}
+
+.theme-dark {
+  --color-bg-primary: #0B3B49;
+  --color-bg-primary-soft: rgb(16, 91, 112);
+  --color-bg-secondary: #233d4d;
+  --color-bg-secondary-soft: #2d4e63;
+  --color-bg-default: #001524;
+  --color-bg-default-soft: #124b6e;
+  --color-bg-inverse: #373737;
+
+  --color-text-primary: #8AA79F;
+  --color-text-secondary: #FFB569;
+  --color-text-default: #FFECD1;
+  --color-text-default-soft: #6a6a6a;
+  --color-text-inverse: rgb(202, 207, 209);
+  --color-text-inverse-soft: #15616D;
+
+  --font-display: Georgia, Times, "Times New Roman", serif;
+  --font-body: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana,
+    "Verdana Ref", sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-display: 400;
+  --font-weight-btn: 600;
+}

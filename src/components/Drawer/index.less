@@ -1,0 +1,162 @@
+@animation-duration-slow: 0.3s;
+@ease-base-out          : cubic-bezier(0.7, 0.3, 0.1, 1);
+
+.drawer {
+  @apply fixed w-0 h-full;
+  transition: transform @animation-duration-slow @ease-base-out,
+    height 0s ease @animation-duration-slow, width 0s ease @animation-duration-slow;
+
+  >* {
+    transition: transform @animation-duration-slow @ease-base-out,
+      box-shadow @animation-duration-slow @ease-base-out;
+  }
+
+  .resize {
+    @apply absolute z-10 h-5 w-5 flex items-center justify-center;
+
+    >i {
+      cursor: s-resize;
+    }
+  }
+
+  &.left,
+  &.right {
+    @apply top-0 w-0 h-full;
+
+    .resize {
+      top: 50%;
+    }
+
+    .wrapper {
+      @apply h-full;
+    }
+
+    &.open {
+      @apply w-full;
+
+      .wrapper {
+        @apply transform translate-x-0;
+      }
+    }
+  }
+
+  &.left {
+    @apply left-0;
+
+    .resize {
+      right: 0;
+    }
+
+    .wrapper {
+      @apply transform -translate-x-full;
+    }
+  }
+
+  &.right {
+    @apply right-0;
+
+    .resize {
+      left: 0;
+    }
+
+    .wrapper {
+      @apply right-0 transform translate-x-full;
+    }
+  }
+
+  &.top,
+  &.bottom {
+    @apply left-0 w-full h-0;
+
+    .resize {
+      left: 50%;
+
+      >i {
+        transform: rotate(90deg);
+      }
+    }
+
+    .wrapper {
+      @apply w-full;
+    }
+
+    &.open {
+      @apply h-full;
+
+      .wrapper {
+        @apply transform translate-y-0;
+      }
+    }
+  }
+
+  &.top {
+    @apply top-0;
+
+    .resize {
+      bottom: 0;
+    }
+
+    .wrapper {
+      @apply transform -translate-y-full;
+    }
+  }
+
+  &.bottom {
+    @apply bottom-0;
+
+    .resize {
+      top: 0;
+    }
+
+    .wrapper {
+      @apply bottom-0 transform translate-y-full;
+    }
+  }
+
+  &.open {
+    transition: transform @animation-duration-slow @ease-base-out;
+
+    .mask {
+      @apply opacity-100 h-full transition-none;
+      animation: drawerFadeIn @animation-duration-slow @ease-base-out;
+    }
+  }
+
+  .content {
+    @apply relative w-full h-full z-20 flex border-0 flex-col flex-no-wrap;
+  }
+
+  .mask {
+    @apply absolute top-0 left-0 w-full h-0 opacity-0;
+    filter          : ~'alpha(opacity=45)';
+    background-color: fade(#000, 45%);
+    transition      : opacity @animation-duration-slow linear, height 0s ease @animation-duration-slow;
+  }
+
+  .wrapper {
+    @apply absolute flex flex-col shadow-2xl;
+  }
+}
+
+@keyframes drawerFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.drawer-header,
+.drawer-footer {
+  @apply h-1/6;
+}
+
+.drawer-body {
+  @apply flex-1;
+}
+
+.drawer>div {
+  @apply p-4;
+}

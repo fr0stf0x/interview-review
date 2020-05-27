@@ -1,0 +1,33 @@
+
+.btn {
+  @apply outline-none font-btn rounded-lg bg-default px-4 py-2;
+  border-radius: 10px;
+
+  &:focus, &.active {
+    @apply outline-none shadow-outline bg-default-soft;
+  }
+}
+
+.btn.primary {
+  @apply bg-primary text-primary;
+
+  &:hover,&.active {
+    @apply bg-primary-soft;
+  }
+}
+
+.btn.secondary {
+  @apply bg-secondary text-secondary;
+
+  &:hover, &.active {
+    @apply bg-secondary-soft;
+  }
+}
+
+.btn.sm {
+  @apply px-2 py-1;
+}
+
+.btn.lg {
+  @apply px-8 py-6;
+}
