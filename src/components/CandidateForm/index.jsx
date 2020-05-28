@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '~/src/components/Button';
-import { MAX_LEVEL } from '~/src/constant';
+import { MAX_LEVEL, MAX_STAR } from '~/src/constant';
 
 import useInput from '~/src/hooks/useInput';
 import constrant from './constrant';
@@ -60,7 +60,7 @@ const CandidateForm = (props) => {
       >
         <span className="block w-1/4 text-sm font-semibold">Point</span>
         <input
-          className="form-input w-1/4 text-indigo-500"
+          className="form-input w-1/2 text-indigo-500"
           type="number"
           name="point"
           {...bindPoint}
@@ -74,10 +74,11 @@ const CandidateForm = (props) => {
           min="0"
           max={MAX_LEVEL}
           className="form-input w-1/4 text-indigo-500"
-          type="number"
+          type="range"
           name="level"
           {...bindLevel}
         />
+        <span className="w-1/4 ml-8 text-sm">{level}</span>
       </label>
       <label
         className="flex mt-3 items-center lg:w-full"
@@ -86,10 +87,12 @@ const CandidateForm = (props) => {
         <input
           className="form-input w-1/4 text-indigo-500"
           min="0"
-          type="number"
+          max={MAX_STAR}
+          type="range"
           name="star"
           {...bindStar}
         />
+        <span className="w-1/4 ml-8 text-sm">{star}</span>
       </label>
 
       <div className="mt-6 block text-center">

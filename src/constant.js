@@ -4,3 +4,4 @@ export const directions = {
 };
 
 export const MAX_LEVEL = 10;
+export const MAX_STAR = 5;
