@@ -40,11 +40,11 @@ const CandidateForm = (props) => {
   };
 
   return (
-    <form className="w-1/3 flex flex-col" onSubmit={onSubmit}>
+    <form className="flex flex-col w-full md:w-2/3 xl:w-3/5" onSubmit={onSubmit}>
       <label
         className="flex mt-3 items-center"
       >
-        <span className="block w-1/4 text-sm font-semibold">Name</span>
+        <span className="block w-1/5 sm:w-1/4 text-sm font-semibold">Name</span>
         <input
           className="form-input flex-1 text-indigo-500"
           type="text"
@@ -58,7 +58,7 @@ const CandidateForm = (props) => {
       <label
         className="flex mt-3 items-center lg:w-full"
       >
-        <span className="block w-1/4 text-sm font-semibold">Point</span>
+        <span className="block w-1/5 sm:w-1/4 text-sm font-semibold">Point</span>
         <input
           className="form-input w-1/2 text-indigo-500"
           type="number"
@@ -69,7 +69,7 @@ const CandidateForm = (props) => {
       <label
         className="flex mt-3 items-center lg:w-full"
       >
-        <span className="block w-1/4 text-sm font-semibold">Level</span>
+        <span className="block w-1/5 sm:w-1/4 text-sm font-semibold">Level</span>
         <input
           min="0"
           max={MAX_LEVEL}
@@ -83,7 +83,7 @@ const CandidateForm = (props) => {
       <label
         className="flex mt-3 items-center lg:w-full"
       >
-        <span className="block w-1/4 text-sm font-semibold">Star</span>
+        <span className="block w-1/5 sm:w-1/4 text-sm font-semibold">Star</span>
         <input
           className="form-input w-1/4 text-indigo-500"
           min="0"

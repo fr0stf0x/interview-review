@@ -28,7 +28,7 @@ const CreateRecord = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mx-auto">
+    <div className="flex flex-col items-center justify-center w-full">
       <h1 className="text-xl">Create record</h1>
       <CandidateForm
         {...defaultValues}

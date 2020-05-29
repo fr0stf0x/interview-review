@@ -40,7 +40,7 @@ const EditRecord = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mx-auto">
+    <div className="flex flex-col items-center justify-center w-full">
       <h1 className="text-xl">Edit record</h1>
       {candidateInfo && (
         <CandidateForm

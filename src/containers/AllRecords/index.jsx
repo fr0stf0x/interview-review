@@ -42,9 +42,9 @@ const AllRecords = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mx-auto">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-xl block">All candidates</h1>
-      <div className="flex items-end rounded-sm shadow-lg p-4 w-1/2">
+      <div className="flex items-end rounded-sm shadow-lg p-4 w-full xl:w-3/5 overflow-x-scroll">
         {getObjectPropSafely(() => sorted.length) ? (
           <>
             <DataTable
@@ -55,7 +55,7 @@ const AllRecords = (props) => {
               onClickSort={onClickSort}
               onClickRemove={onClickRemove}
               onClickEdit={onClickEdit}
-              className="mt-3 table-striped w-full"
+              className="mt-3 table-auto table-striped w-full"
             />
           </>
         ) : (
